@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    environment:
+      GREETING: ${GREETING}
+      STORAGE: sqlite
+    ports:
+      - "${HOST_PORT}:8000"
+    volumes:
+      - counter-data:/data
+
+volumes:
+  counter-data:
